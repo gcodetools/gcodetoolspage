@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  background-color: #161616;
+}
+
+/* Hover visual para span y h3 dentro del botón */
+button.accordion-btn:hover span,
+button.accordion-btn:hover h3 {
+  color: #ffffff !important;
+}
+
+/* Cuando el acordeón está abierto */
+button.accordion-btn.active span,
+button.accordion-btn.active h3 {
+  color: #ffffff !important;
+}
+

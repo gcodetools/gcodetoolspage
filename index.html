@@ -1,76 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gcode Tools | Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./global.css" />
+    <link href="/src/index.css" rel="stylesheet">
+    <title>Gcode Tools </title>
     <!-- Archivo principal (defer para esperar que cargue el DOM) -->
-    <script type="module" src="./scripts/main.js" defer></script>
   </head>
 
   <body>
     <div class="m-auto max-w-[1100px] px-5 pb-5">
-      <!-- Aquí se inyectará el header dinámico -->
-      <div id="header-container"></div>
-
-      <main class="flex flex-col gap-[10px]">
-        <section class="flex flex-col gap-[10px] min-h-[176px]">
-          <h1
-            class="break-words text-[56px] text-white font-normal leading-[100%]"
-          >
-            The Future of Making, In Every Artist’s Hands
-          </h1>
-        </section>
-        <hr class="border-none h-[1px] bg-[#404040] my-[4px]" />
-        <section
-          class="flex flex-col sm:flex-row sm:justify-beteewn gap-[40px] text-[20px] text-white font-normal leading-[21px]]"
-        >
-          <div class="space-y-[10px]">
-            <div class="flex-1 h-[150px] overflow-hidden">
-              <img
-                src="./assets/clay-slicer.png"
-                alt="img-1"
-                class="w-full h-full object-cover object-center"
-              />
-            </div>
-            <p>
-              No steep learning curves. No barriers. Just powerful, intuitive
-              tools that expand what’s possible for creators everywhere.
-            </p>
-          </div>
-          <div class="space-y-[10px]">
-            <div class="flex-1 h-[150px] overflow-hidden">
-              <img
-                src="./assets/clay-slicer.png"
-                alt="img-2"
-                class="w-full h-full object-cover object-center"
-              />
-            </div>
-            <p>
-              No steep learning curves. No barriers. Just powerful, intuitive
-              tools that expand what’s possible for creators everywhere.
-            </p>
-          </div>
-          <div class="space-y-[10px]">
-            <div class="flex-1 h-[150px] overflow-hidden">
-              <img
-                src="./assets/clay-slicer.png"
-                alt="img-3"
-                class="w-full h-full object-cover object-center"
-              />
-            </div>
-            <p>
-              No steep learning curves. No barriers. Just powerful, intuitive
-              tools that expand what’s possible for creators everywhere.
-            </p>
-          </div>
-        </section>
-      </main>
-
-      <!-- Aquí se inyectará el footer dinámico -->
-      <div id="footer-container"></div>
+      <div id="root"></div>
     </div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gcode Tools | Pricing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://gcodetools.github.io/gcodetoolspage/global.css" />
+    <!-- Archivo principal (defer para esperar que cargue el DOM) -->
+    <script type="module" src="https://gcodetools.github.io/gcodetoolspage/scripts/main.js" defer></script>
+    <script type="module" src="https://gcodetools.github.io/gcodetoolspage/scripts/products.js" defer></script>
+  </head>
+
+  <body>
+    <div class="m-auto max-w-[1100px] px-5 pb-5">
+      <!-- Aquí se inyectará el header dinámico -->
+      <div id="header-container"></div>
+
+      <main class="flex flex-col gap-[10px]">
+        <section
+          class="flex flex-col gap-[10px] min-h-[112px] sm:min-h-[176px]"
+        >
+          <h1
+            class="break-words text-[56px] text-white font-normal leading-[100%]"
+          >
+            Pricing
+          </h1>
+        </section>
+        <hr class="border-none h-[1px] bg-[#404040] my-[4px]" />
+        <section>
+          <div id="pricing-sections"></div>
+        </section>
+      </main>
+
+      <!-- Aquí se inyectará el footer dinámico -->
+      <div id="footer-container"></div>
+    </div>
+  </body>
+</html>

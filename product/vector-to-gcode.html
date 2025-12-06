@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gcode Tools | Products | Vector to Gcode</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://gcodetools.github.io/gcodetoolspage/global.css" />
+    <!-- Archivo principal (defer para esperar que cargue el DOM) -->
+    <script type="module" src="https://gcodetools.github.io/gcodetoolspagescripts/main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="m-auto max-w-[1100px] px-5 pb-5">
+      <!-- Aquí se inyectará el header dinámico -->
+      <div id="header-container"></div>
+
+      <main class="flex flex-col gap-[10px]">
+        <section class="flex flex-col gap-[10px]">
+          <div class="flex flex-col md:flex-row md:justify-between h-[121px]">
+            <h1
+              class="h-[67px] md:h-auto text-[56px] text-white font-normal leading-[100%]"
+            >
+              Vector to Gcode
+            </h1>
+            <p class="text-[18px] text-[#787878] font-normal leading-[100%]">
+              <span class="text-[20px] text-white font-normal">2.0</span> for
+              Mac and Windows
+            </p>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-[12px]">
+            <a
+              href="https://gcodetools.gumroad.com/l/V2G2"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex justify-center items-center w-[200px] h-[38px] text-[16px] text-white font-normal cursor-pointer rounded-[9px] bg-[#006EFF] hover:bg-blue-600 transition-colors"
+            >
+              Subscribe $6/month
+            </a>
+            <a
+              href="https://gcodetools.gumroad.com/l/V2G2"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex justify-center items-center w-[215px] h-[38px] text-[16px] text-white font-normal cursor-pointer rounded-[9px] bg-[#006EFF] hover:bg-blue-600 transition-colors"
+            >
+              One Time Payment $99
+            </a>
+          </div>
+        </section>
+        <hr class="border-none h-[1px] bg-[#404040] my-[4px]" />
+        <section class="flex flex-col gap-[10px]">
+          <div class="h-[100%]">
+            <img
+              src="https://gcodetools.github.io/gcodetoolspage/assets/Vector_To_Gcode_Hero.png"
+              alt="clay-slicer-img"
+              class="w-full h-full object-cover object-center"
+            />
+          </div>
+          <hr class="border-none h-[1px] bg-[#404040] my-[4px]" />
+          <div class="min-h-[125px]">
+            <p class="text-[20px] text-white font-normal">
+              Cut hours from your process. Instantly clone files, fine-tune
+              spacing, and preview results—Gcode Cloner keeps your workflow
+              fast, smooth, and efficient.
+            </p>
+          </div>
+          <div></div>
+        </section>
+        <section>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >01</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                SVG Colors Support
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal pt-[13px] pb-[26px]"
+              >
+                <p>
+                  Add individual colors to your SVGs and get a more accurate
+                  preview of your colored drawings — directly in your G-code
+                  file. Perfect for multi-pass work and color-specific passes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >02</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Smart SVG Centering
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal pt-[13px] pb-[26px]"
+              >
+                <p>
+                  Center your SVGs on the bed with a single click. No more
+                  manual alignment — just clean, precise positioning every time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >03</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Custom Start Commands per SVG
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal pt-[13px] pb-[26px]"
+              >
+                <p>
+                  Go beyond simple on/off commands. Now you can insert custom
+                  commands at the start of every SVG — pause the machine, change
+                  tools, or anything else you need between drawings. Full
+                  control, one SVG at a time.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >04</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Jump to SVG Start
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal pt-[13px] pb-[26px]"
+              >
+                <p>
+                  We’ve added a new button that lets you instantly jump to the
+                  beginning of each SVG in your G-code. Navigating complex files
+                  is now faster and more convenient.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >05</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                One-Click Pauses
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal pt-[13px] pb-[26px]"
+              >
+                <p>
+                  Need to add a pause between SVGs? Now you can do it with a
+                  single click — no need to manually write the G-code. Just
+                  place it where you want, and you’re done.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >06</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Path and Travel Preview
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/clay-slicer.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Experience a new level of precision with the Gcode Tools
+                    Viewer, designed to streamline your CNC workflow. Navigate
+                    through a sleek grid interface that mirrors your machine’s
+                    bed, providing clarity and control at every step. The
+                    lightning-fast SVG viewer lets you analyze and refine your
+                    designs effortlessly. Monitor machine movements in
+                    real-time, set intervals with ease, and personalize your
+                    view with customizable colors. Enhance your CNC experience
+                    with the intuitive Gcode Tools Viewer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >07</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Optimize Toolpath Sequence
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/clay-slicer.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Refine your CNC efficiency by optimizing toolpaths. Minimize
+                    unnecessary movements and focus on nearby features to
+                    streamline operations. Whether cutting, plotting, or any
+                    other task, this approach reduces process time and enhances
+                    precision.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >08</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Compatibility
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/clay-slicer.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Our app offers maximum compatibility with 99% of plotter
+                    machines and applications, from laser cutters to 3D
+                    plotters. Customize your setup easily, including DPI, for a
+                    flexible and smooth workflow tailored to your needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >09</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Sort Multiple SVG Files
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/clay-slicer.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Unleash the power of advanced SVG management. Tailor each
+                    SVG file with unique on/off commands, from color changes to
+                    power adjustments, allowing for unmatched flexibility.
+                    Control every detail of your project to achieve precise,
+                    custom results every time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >10</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Customizable Gcode
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/clay-slicer.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Take full command of your designs with the G-code panel,
+                    offering real-time visual feedback for every code segment.
+                    Effortlessly insert custom commands, visualize specific
+                    G-code per SVG file, and control interval-based coding to
+                    suit your needs. The panel seamlessly integrates your
+                    preferences, ensuring every element is exactly as you
+                    envision.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >11</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Variable Line Width
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/clay-slicer.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Take full command of your designs with the G-code panel,
+                    offering real-time visual feedback for every code segment.
+                    Effortlessly insert custom commands, visualize specific
+                    G-code per SVG file, and control interval-based coding to
+                    suit your needs. The panel seamlessly integrates your
+                    preferences, ensuring every element is exactly as you
+                    envision.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >12</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Interval Commands
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/img-2.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Maximize control over your operations with interval
+                    commands. Execute actions at exact distances, like
+                    instructing a plotter to reload paint every 100 steps. Gcode
+                    Tools allows you to insert custom G-code or SVG actions at
+                    each interval, ensuring control over your process.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              class="accordion-btn flex justify-between items-center gap-[18px] w-full py-[14px] border-t border-[#404040] cursor-pointer text-[#BCBCBC]"
+              aria-expanded="false"
+            >
+              <span
+                class="text-[14px] font-normal leading-[100%] w-[60px] md:w-[100px] text-left"
+                >13</span
+              >
+              <h3
+                class="text-[14px] font-normal leading-[100%] text-left flex-1"
+              >
+                Custom Commands per SVG
+              </h3>
+              <div class="mr-4 icon">
+                <img
+                  src="https://gcodetools.github.io/gcodetoolspage/assets/plus.svg"
+                  alt="plus-icon"
+                  class="w-[22px] h-[18px]"
+                />
+              </div>
+            </button>
+
+            <div
+              class="accordion-content px-[16px] md:pr-[37px] md:pl-[118px] overflow-hidden transition-all duration-300 ease-in-out max-h-0"
+            >
+              <div
+                class="flex flex-col md:flex-row gap-[39px] pt-[13px] pb-[26px] items-start"
+              >
+                <div
+                  class="flex items-center justify-center flex-shrink-0 md:max-w-[50%] w-auto h-auto"
+                >
+                  <img
+                    src="https://gcodetools.github.io/gcodetoolspage/assets/img-1.png"
+                    alt="Clay Slicer preview"
+                    class="w-full h-auto object-contain object-center"
+                  />
+                </div>
+
+                <div
+                  class="flex flex-col gap-3 text-sm text-[#888888] leading-[17px] font-normal flex-1"
+                >
+                  <p>
+                    Bring your CNC projects to life with custom G-code commands.
+                    Enhance functionality, explore new techniques, and push the
+                    limits of automation by integrating unique commands per SVG
+                    or layer. This dynamic approach invites creativity and
+                    innovation, enabling you to unlock new potential in
+                    automated tasks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Aquí se inyectará el footer dinámico -->
+      <div id="footer-container"></div>
+    </div>
+    <script>
+      const accordions = document.querySelectorAll("button[aria-expanded]");
+
+      accordions.forEach((btn, index) => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector(".icon img");
+        const title = btn.querySelector("h3");
+
+        content.style.maxHeight = "0px";
+        content.style.overflow = "hidden";
+        content.style.transition = "max-height 0.3s ease-in-out";
+        btn.setAttribute("aria-expanded", "false");
+
+        if (index === 0) {
+          openAccordion(btn, content, icon, title);
+        }
+
+        btn.addEventListener("click", () => {
+          const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+          accordions.forEach((otherBtn) => {
+            if (otherBtn !== btn) {
+              const otherContent = otherBtn.nextElementSibling;
+              const otherIcon = otherBtn.querySelector(".icon img");
+              const otherTitle = otherBtn.querySelector("h3");
+              closeAccordion(otherBtn, otherContent, otherIcon, otherTitle);
+            }
+          });
+
+          if (isOpen) {
+            closeAccordion(btn, content, icon, title);
+          } else {
+            openAccordion(btn, content, icon, title);
+          }
+        });
+      });
+
+      function openAccordion(btn, content, icon, title) {
+        content.style.maxHeight = content.scrollHeight + "px";
+        btn.setAttribute("aria-expanded", "true");
+        icon.src = "/assets/minus.svg";
+        btn.classList.add("active");
+      }
+
+      function closeAccordion(btn, content, icon, title) {
+        content.style.maxHeight = "0px";
+        btn.setAttribute("aria-expanded", "false");
+        icon.src = "/assets/plus.svg";
+        btn.classList.remove("active");
+      }
+
+      window.addEventListener("resize", () => {
+        accordions.forEach((btn) => {
+          const content = btn.nextElementSibling;
+          if (btn.getAttribute("aria-expanded") === "true") {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
